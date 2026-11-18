@@ -1,0 +1,21 @@
+# dsh-purge-kit — bundle patch.
+# Layer order: every bundle patch applies first, then the profile's own cordis.patch.yml.
+# This file therefore registers the plugin itself, so installing the package and
+# restarting is enough: no edit to <profile>/cordis.patch.yml is required.
+
+- id: system-prompt
+  config:
+    includeHarnessIdentity: false
+    personaPrefix: ""
+    personaSuffix: ""
+
+- insert:
+    - id: dsh-purge-kit
+      name: dsh-purge-kit
+      config:
+        enabled: true
+        tone: true
+        tools: true
+        tail: true
+        toolGate: true
+        normalize: true

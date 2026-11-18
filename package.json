@@ -1,0 +1,37 @@
+{
+  "name": "dsh-purge-kit",
+  "version": "1.0.0",
+  "description": "Execution-policy layer for DSH: reply profile blocks, open tool gate, prompt assembly normalization. Self-registers through its bundle patch — install and restart, nothing else.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "bin": {
+    "purgekit-doctor": "./bin/doctor.mjs"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "bin",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "cordis",
+    "execution-policy"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}
